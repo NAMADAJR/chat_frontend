@@ -1,10 +1,12 @@
 import React from 'react'
+import ChatRoom from '../components/ChatRoom'
+import Chats from '../components/Chats'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="flex h-screen items-center justify-center bg-black text-white">
       <h1>
-        Dashboard
+        <Chats />
       </h1>
     </div>
   )

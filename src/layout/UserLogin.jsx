@@ -28,6 +28,7 @@ const UserLogin = () => {
         
         if (response.ok) {
           localStorage.setItem("token", data.access_token); 
+          localStorage.setItem("id", data.id);
           navigate("/Dashboard"); 
         } else {
           alert(data.detail || "Login failed");
