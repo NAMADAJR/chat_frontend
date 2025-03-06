@@ -1,8 +1,11 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useNavigate, Link } from "react-router-dom";
 
 const AdminLogin = () => {
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       username: '',
@@ -23,9 +26,9 @@ const AdminLogin = () => {
         });
         const data = await response.json();
         if (response.ok) {
-          console.log('Login Successful:', data);
-          alert('Login Successful');
-          // Store token or redirect admin
+          localStorage.setItem("token", data.access_token); 
+          localStorage.setItem("id", data.id);
+          navigate("/AdminDashboard");
         } else {
           console.error('Login Failed:', data);
           alert(data.detail || 'Login failed');
