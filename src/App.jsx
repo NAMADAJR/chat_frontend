@@ -13,8 +13,6 @@ const App = () => {
     <div>
     <Navbar />
     </div>
-    
-    
       <Routes>
         <Route path="/" element={<UserLogin />} />
         <Route path="/login" element={<UserLogin />} />
@@ -24,8 +22,6 @@ const App = () => {
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
-    
-    
   );
 };
 
